@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "excel4node": "^1.7.2",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "mongodb": "^4.1.4"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "dev": "set DEBUG=app:* & nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
