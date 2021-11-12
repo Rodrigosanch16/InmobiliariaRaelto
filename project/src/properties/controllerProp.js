@@ -43,4 +43,20 @@ module.exports.PropertiesController = {
             Response.error(res);
         }
     },
+    updateProperty: async (req, res) => {
+        try {
+            const { params : {id}, } = req;
+            const {body} = req;
+            if (!body || Object.keys(body).length === 0 && !property) {
+                Response.error(res, new createError.BadRequest());
+            }else{
+                const updatedId = await PropertiesService.update(id, body);
+                console.log(updatedId);
+                Response.success(res, 200, 'Inmueble actualizado correctamente', "id: " + id);
+            }
+        } catch (error) {
+            debug(error);
+            Response.error(res);
+        }
+    }
 };

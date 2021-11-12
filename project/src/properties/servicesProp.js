@@ -36,11 +36,27 @@ const create = async (property) => {
     //que lo retornamos
 };
 
+const update = async (id, property) => {
+    const collection = await Database(COLLECTION);
+    let resultUpdt = await collection.updateOne({_id: ObjectId(id)}, {$set: {body: property}});
+    console.log("AQUI ID: "+id);
+    console.log(property);
+    //updateOne solo actualiza un documento, el primero que encuentre
+    return resultUpdt.updatedId;
+};
+
+const delById = async (id) => {
+    const collection = await Database(COLLECTION);
+    
+}
+
 module.exports.PropertiesService = {
     getAll,
     /*Si no se le pasa clave o valor toma como clave 
     el mismo nombre getAll y como valor expondra la funcion getAll*/
     getById,
     create,
+    update,
+    //delById,
 };//asi tenemos el servicio que se comunica con la DB y trae los datos
 //para exponerlos al controlador
