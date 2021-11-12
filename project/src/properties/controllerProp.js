@@ -71,5 +71,5 @@ module.exports.PropertiesController = {
             debug(error);
             Response.error(res);
         }
-    }
+    },
 };

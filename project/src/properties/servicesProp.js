@@ -30,7 +30,6 @@ const getById = async (id) => {
 const create = async (property) => {
     const collection = await Database(COLLECTION);
     let result = await collection.insertOne(property);//responde con el id en el body
-    console.log(result);
     return result.insertedId;//insertedId es la forma en que toma el id creado para llevarlo al controller
     //otro metodo de mongo es insertOne que recibe los datos del inmueble
     //el inserta el inmueble en mongodb y devuelve un resultado
